@@ -1,0 +1,49 @@
+body {
+  background: url(http://i.imgur.com/Z7yqXJz.jpg);
+  background-repeat: no-repeat;
+  font-family: 'Droid Serif', serif;
+  color: white;
+}
+
+h1 {
+  margin: 15px auto;
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Lora', serif;
+  margin: 5px auto;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Lora', serif;
+  margin: 1px auto;
+  text-align: right;
+  padding: 5px;
+}
+
+h4 {
+  font-family: 'Lora', serif;
+  margin: 0px auto;
+  padding: 5px;
+  display: inline-block;
+  font-weight: 400;
+}
+
+a:visited {
+  color: #B45F04;
+}
+
+div.links {
+  text-align: center;
+}
+
+.intro.ng-scope,
+.countries.ng-scope,
+.capitals.ng-scope {
+  margin: 0 auto;
+  width: 600px;
+  text-algin: center;
+}
