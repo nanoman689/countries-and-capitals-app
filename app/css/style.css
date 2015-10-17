@@ -1,6 +1,6 @@
 body {
   background: url(http://i.imgur.com/Z7yqXJz.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   font-family: 'Droid Serif', serif;
   color: white;
 }
@@ -40,10 +40,68 @@ div.links {
   text-align: center;
 }
 
+.box.ng-scope ul {
+  width: 600px;
+}
+
+.box.ng-scope li {
+  width: 50%;
+  display:inline-block;
+}
+
+p.ng-binding {
+  display: inline-block;
+}
+
 .intro.ng-scope,
 .countries.ng-scope,
 .capitals.ng-scope {
   margin: 0 auto;
   width: 600px;
   text-algin: center;
+}
+
+.results.ng-binding.ng-scope {
+  text-align: center;
+}
+/* animation stuff */
+
+.animate-view.ng-enter, .friend.ng-leave {
+    transition: all linear 0.5s;
+}
+
+.animate-view.ng-enter,
+.animate-view.ng-leave.ng-leave-active {
+    opacity: 0;
+    max-height:0;
+}
+
+.animate-view.ng-leave,
+.animate-view.ng-enter.ng-enter-active {
+    opacity: 1;
+    max-height:1em;
+}
+/* Countries results page */
+
+.capitals.ng-scope {
+  text-align: center;
+}
+
+/* animation stuff */
+
+table {
+  border: 1px solid white;
+  width: 75%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid white;
+  text-align: center;
+  background-color: 0099FF;
+}
+
+tr.alt td {
+  background: #4DB8FF;
 }
