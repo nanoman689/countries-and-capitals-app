@@ -7,6 +7,7 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
               $http.get('http://api.geonames.org/countryInfo?username=nanoman689@gmail.com').then(function(data, status, headers, config){
                 var x2js = new X2JS();
                 var jsonObj = x2js.xml_str2json(data.data);
+                console.log(jsonObj);
                 countries = jsonObj.geonames.country;
               });
 
