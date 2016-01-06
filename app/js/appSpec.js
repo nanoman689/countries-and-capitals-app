@@ -14,6 +14,7 @@ describe("countryData", function() {
       countryData.fetch();
       $httpBackend.flush();
       expect(countryData.getCountries().length).toBeGreaterThan(0);
+      expect(countryData.findCountries('AD').countryCode).toBe('AD');
       $httpBackend.verifyNoOutstandingRequest();
         })
     })
