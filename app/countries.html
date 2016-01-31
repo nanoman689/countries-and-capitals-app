@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<div class="countries">
+  <p><h4>Browse the listing.</h4></p>
+</div>
+<div class="box">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Code</td>
+      <td>Capital</td>
+      <td>Area in Square Km</td>
+      <td>Population</td>
+      <td>Continent</td>
+    </tr>
+<tr class="listings" ng-repeat="country in countries">
+  <td>
+    <h3 ng-click='pickCountry(country.countryCode)'>{{country.countryName}}</h3></td>
+      <td>{{country.countryCode}}</td>
+      <td>{{country.capital}}</td>
+      <td>{{country.areaInSqKm}}</td>
+      <td>{{country.population | number:0}}</td>
+      <td>{{country.continent}}</td>
+    </tr>
+</table>
