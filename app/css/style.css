@@ -105,3 +105,18 @@ td {
 tr.alt td {
   background: #4DB8FF;
 }
+
+input[type="button"]{
+    font-family: 'Droid Serif', serif;
+    background: #D8D8D8;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: auto;
+    display: block;
+}
+
+input[type="button"]:hover {
+    background: #819FF7;
+}

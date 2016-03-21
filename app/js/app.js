@@ -4,13 +4,18 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
         var selectedCountries;
         return {
             'fetch': function (){
+              var deferred = $q.defer();
               $http.get('http://api.geonames.org/countryInfo?username=nanoman689@gmail.com').then(function(data, status, headers, config){
                 var x2js = new X2JS();
                 var jsonObj = x2js.xml_str2json(data.data);
-                console.log(jsonObj);
+                
                 countries = jsonObj.geonames.country;
+                  
+                deferred.resolve(countries);  
               });
-
+                
+                return deferred.promise;
+                
         },
             'getCountries': function (){
               return countries;
@@ -55,32 +60,15 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
               $location.path('/countries/' + countryCode + '/capital');
             }
 
-            countryData.fetch();
-            $scope.countries = countryData.getCountries();
-
+            countryData.fetch().then(function(data){
+                 $scope.countries = data;   
+                console.log($scope.countries);
+            });
+        
+        
             var data=["countryName", "countryCode", "capital", "areaInSqKm", "population", "currencyCode"];
             console.log($scope.countries);
-            /*
-            $http({
-              url:"http://api.geonames.org/countryInfo?username=nanoman689@gmail.com",
-              method: 'GET',
-              data: data,
-            })
-            .then(function(data, status, headers, config) {
-              // called when the data is avaiable
-              console.log('Sucess!');
-              // console.log(data.data);
-              var x2js = new X2JS();
-              var jsonObj = x2js.xml_str2json(data.data);
-              console.log(jsonObj);
-              $scope.countries = jsonObj.geonames.country;
-            },
-            function(data, status, headers, config) {
-              // called when an error occurs or when and error getting the data
-              console.log('Fail!');
-            });
 
-            */
       }])
 
       .controller('capitalsCtrl', ['$scope', 'countryData', '$routeParams', function($scope, countryData, $routeParams) {
