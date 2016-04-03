@@ -4,18 +4,13 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
         var selectedCountries;
         return {
             'fetch': function (){
-              var deferred = $q.defer();
-              $http.get('http://api.geonames.org/countryInfo?username=nanoman689@gmail.com').then(function(data, status, headers, config){
-                var x2js = new X2JS();
-                var jsonObj = x2js.xml_str2json(data.data);
-                
-                countries = jsonObj.geonames.country;
-                  
-                deferred.resolve(countries);  
+              return $http
+                  .get('http://api.geonames.org/countryInfo?username=nanoman689@gmail.com')
+                  .then(function(data, status, headers, config){
+                        var x2js = new X2JS();
+                        var jsonObj = x2js.xml_str2json(data.data);
+                        countries = jsonObj.geonames.country;
               });
-                
-                return deferred.promise;
-                
         },
             'getCountries': function (){
               return countries;
@@ -47,25 +42,32 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
         });
 
       }])
-      .controller('homeCtrl', ['$rootScope', function($rootScope) {
+      .controller('homeCtrl', ['$scope', 'countryData', function($scope, countryData) {
           //Home Controller
+          $scope.loaded = "Loading....."; 
+              countryData
+                  .fetch()
+                  .then(function(){
+                     $scope.loaded = "Countries Loaded";
+          });   
 
       }])
 
       .controller('countriesCtrl', ['$scope', 'countryData', '$location', function($scope, countryData, $location) {
           //Countries Controller
-            $scope.countries = [];
+            $scope.countries = countryData.getCountries();
+            if ($scope.countries.length === 0){
+                countryData
+                    .fetch()
+                    .then(function(){
+                        $scope.countries = countryData.getCountries();
+                });
+            }
             $scope.pickCountry = function (countryCode){
 
               $location.path('/countries/' + countryCode + '/capital');
             }
-
-            countryData.fetch().then(function(data){
-                 $scope.countries = data;   
-                console.log($scope.countries);
-            });
-        
-        
+            
             var data=["countryName", "countryCode", "capital", "areaInSqKm", "population", "currencyCode"];
             console.log($scope.countries);
 
