@@ -2,5 +2,13 @@
 <div class="intro">
   <p><h4>This application generates a list of countries and learn what their captials. Start by clicking the "Browse Countries" button below.</h4></p>
 
-<input type="button" onclick="location.href='#/countries'" value="Browse Countries">
+<input type="button" onclick="location.href='#/countries'" ng-disabled = "loaded === 'Loading.....'" value="Browse Countries">
+</div>
+
+<div>{{loaded}}</div>
+
+<div ng-if="loaded === 'Loading.....'" class="spinner">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
 </div>
