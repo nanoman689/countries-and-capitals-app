@@ -81,12 +81,12 @@ angular.module('myApp', ['ngRoute', 'ngAnimate'])
           $scope.imageFlag = 'http://www.geonames.org/flags/x/' + $scope.countries.countryCode + '.gif';
 
 
-      }]);
+      }])
       .controller('homeCtrl', function($rootScope) {
           //Home Controller
           $scope.getJSONData = function(){
             $http.get('http://api.geonames.org/countryInfo?username=demo')
-              .then(function(response)){
+              .then(function(response){
                 $scope.countryName = response.data;
               });
           };
