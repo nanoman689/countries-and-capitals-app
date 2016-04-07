@@ -1,6 +1,6 @@
 body {
   background: url(http://i.imgur.com/Z7yqXJz.jpg);
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   font-family: 'Droid Serif', serif;
   color: white;
 }
@@ -58,7 +58,7 @@ p.ng-binding {
 .capitals.ng-scope {
   margin: 0 auto;
   width: 600px;
-  text-algin: center;
+  text-align: center;
 }
 
 .results.ng-binding.ng-scope {
@@ -172,3 +172,4 @@ input[type="button"]:hover {
     transform: scale(1.0);
   }
 }
+

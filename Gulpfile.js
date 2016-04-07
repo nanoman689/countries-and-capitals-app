@@ -72,9 +72,9 @@ gulp.task('styles', function() {
 
 // Image optimization task
 gulp.task('images', function() {
-  return gulp.src('site/img/*')
+  return gulp.src('site/img/*.jpg')
     .pipe(imagemin())
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('./build/img'));
 });
 
 // Watch task
@@ -87,4 +87,4 @@ gulp.task('watch', function() {
 gulp.task('default', ['jshint', 'sass', 'watch']);
 
 // Build task
-gulp.task('build', ['copy-html-files', 'usemin']);
+gulp.task('build', ['copy-html-files', 'usemin', 'images']);
