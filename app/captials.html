@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<div class="capitals">
-  <h1>{{countries.countryName}}</h1><br>
-  <img ng-src="http://www.geonames.org/flags/x/{{countries.countryCode | lowercase}}.gif"><br>
-</div>
-<div class="results">
-  Popluation: {{countries.population | number:0}}<br>
-  Area: {{countries.areaInSqKm}}<br>
-  Capital: {{countries.capital}}<br>
+<style>
+    table.countryName{
+        float:left;
+        width: 70%;
+    }
+    
+    table.results {
+        float: right;
+        width: 30%;
+    }
+    
+    table.buttons {
+        width: 100%;
+    }
+</style>
 
-  <img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{countries.countryCode | uppercase}}.png"/><br>
+<div>
+    <table class="countryName">
+     <tr>
+          <td>
+           <div class="capitals">
+               <h1>{{countries.countryName}}</h1><br>
+               <img ng-src="http://www.geonames.org/flags/x/{{countries.countryCode | lowercase}}.gif"><br>
+           </div>
+          </td>
+        </tr>
+    </table>
+    
+    <table class="results">
+     <tr>
+          <td>
+                <div class="results">
+                  Popluation: {{countries.population | number:0}}<br>
+                  Area: {{countries.areaInSqKm}}<br>
+                  Capital: {{countries.capital}}<br>
 
-  <input type="button" onclick="location.href='#/'" value="Home"><input type="button" onclick="location.href='#/countries'" value="Browse Countries">
+                  <img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{countries.countryCode | uppercase}}.png"/><br>
+                </div>
+          </td>
+        </tr>
+    </table>
+
+       <table class="buttons">
+     <tr>
+          <td>
+                <input type="button" onclick="location.href='#/'" value="Home"><input type="button" onclick="location.href='#/countries'" value="Browse Countries">
+          </td>
+        </tr>
+    </table>
+

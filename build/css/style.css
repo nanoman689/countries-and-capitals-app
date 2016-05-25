@@ -90,39 +90,25 @@ p.ng-binding {
 /* animation stuff */
 
 table {
-  border: none;
+  border: 1px solid white;
   width: 75%;
   margin: 0 auto;
   border-collapse: collapse;
 }
 
 td {
-  border:none;
+  border: 1px solid white;
   text-align: center;
   background-color: 0099FF;
-  border: none;    
 }
 
 tr.alt td {
   background: #4DB8FF;
 }
 
-tr {
-  border: none;
-}
-
-tr:nth-child(even){
-    background-color: dimgrey;
-}
-
-th {
-    background-color: black;
-}
-
 input[type="button"]{
     font-family: 'Droid Serif', serif;
     background: #D8D8D8;
-    padding:10px;
     border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
@@ -142,10 +128,6 @@ input[type="button"]:hover {
     padding: 30px;
 }
 
-
-h3.ng-binding {
-    cursor: pointer;   
-}
 
 /* Spinner CSS -- code from http://tobiasahlin.com/spinkit */
 
