@@ -5,6 +5,10 @@ body {
   color: white;
 }
 
+img {
+    widows: 250px;
+}
+
 h1 {
   margin: 15px auto;
   text-align: center;
@@ -26,10 +30,21 @@ h3 {
 
 h4 {
   font-family: 'Lora', serif;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 5px;
   display: inline-block;
   font-weight: 400;
+  color:#00ADB8;
+}
+
+h5 {
+  font-family: 'Lora', serif;
+  margin: 0 auto;
+  padding: 10px;
+  display: inline-block;
+  font-size:1em;    
+  font-weight: 700;
+  color:#01BD69;
 }
 
 a:visited {
@@ -58,7 +73,8 @@ p.ng-binding {
 .capitals.ng-scope {
   margin: 0 auto;
   width: 600px;
-  text-align: center;
+  text-align: center; 
+  position: relative;
 }
 
 .results.ng-binding.ng-scope {
@@ -94,13 +110,18 @@ table {
   width: 75%;
   margin: 0 auto;
   border-collapse: collapse;
+  display: table;
+  vertical-align: middle;
 }
 
-td {
+tr {
   border:none;
   text-align: center;
-  background-color: 0099FF;
-  border: none;    
+  background: black;    
+}
+
+tr:nth-child(even){
+    background-color: dimgrey;
 }
 
 tr.alt td {
@@ -109,10 +130,6 @@ tr.alt td {
 
 tr {
   border: none;
-}
-
-tr:nth-child(even){
-    background-color: dimgrey;
 }
 
 th {

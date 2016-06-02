@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <style>
-    table.countryName{
-        float:left;
-        width: 70%;
-    }
-    
-    table.results {
-        width: 30%;
+    tr {
+        background: none;
     }
     
     table.buttons {
@@ -18,8 +13,58 @@
         margin: auto;
     }
     
+    td.buttons {
+        padding: 10px;
+    }
+    
+    tr:nth-child(even){
+        background: none;  
+    }
+    
+    th.results.ng-binding {
+        background:none;
+    }
+    
+    th.capitals {
+        background:none;
+    }
+    
 </style>
 
+
+<table class="countryName">
+  <tr>
+    <th class="capitals">Country Name<h1>{{countries.countryName}}</h1><br></th>
+    <th class="results">Popluation: {{countries.population | number:0}}<br>
+        Area: {{countries.areaInSqKm}}<br>
+        Capital: {{countries.capital}}<br>
+    </th>
+  </tr>
+  <tr>
+    <td><img ng-src="http://www.geonames.org/flags/x/{{countries.countryCode | lowercase}}.gif"></td>
+    <td><img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{countries.countryCode | uppercase}}.png"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="buttons"><input type="button" onclick="location.href='#/'" value="Home"><input type="button" onclick="location.href='#/countries'" value="Browse Countries"></td>  
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div>
     <table class="countryName">
      <tr>
@@ -53,4 +98,4 @@
           </td>
         </tr>
     </table>
-
+-->
